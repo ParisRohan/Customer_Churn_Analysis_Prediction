@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>BigMart Stores Sales Prediction</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Customer Churn Prediction</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>       
+      </ul>
+    </div>
+  </nav>
+  
+</header>
+  <h2 style="   text-align: center;
+    padding-top: 87px;
+    color:rgb(26, 77, 110);">Customer Churn Prediction Project</h2>
+  <p style="color: red;text-align: center; padding-top: 10px;font-size: 12px">Machine learning Web App. <span
+      style="color: grey; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Built
+      with flask</span></p>
+  <div class="d-flex justify-content-center align-items-center container pt-5">
+
+    <div class="row ">
+
+
+      <form action="/predict" method="post">
+		
+        <div class="form-group">
+          <label for="exampleInputEmail1">Gender</label>
+          <select required name="gender" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>		
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Is the customer a senior citizen?</label>
+          <select required name="SeniorCitizen" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>		
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have a partner?</label>
+          <select required name="Partner" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>		
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have any dependents?</label>
+          <select required name="Dependents" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>		
+		
+        <div class="form-group">
+          <label for="exampleInputEmail1">Tenure</label>
+          <input style="width: 50rem;" name="tenure" type="number" step="any" class="form-control" id="first"
+            aria-describedby="emailHelp" placeholder="Number of months the customer has stayed with the company" required>
+        </div>
+		
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have a phone service?</label>
+          <select required name="PhoneService" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>		
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have multiple lines?</label>
+          <select required name="MultipleLines" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No phone service">No phone service</option>            
+          </select>
+        </div>	
+        
+        <div class="form-group">
+          <label for="exampleInputEmail1">Customer's Internet Service Provider</label>
+          <select required name="InternetService" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="DSL">DSL</option>
+            <option value="Fiber optic">Fiber optic</option>
+            <option value="No">No service provider</option>            
+          </select>
+        </div>	      
+        
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have Online Security?</label>
+          <select required name="OnlineSecurity" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>            
+          </select>
+        </div>	          	
+        
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have Online data backup?</label>
+          <select required name="OnlineBackup" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>            
+          </select>
+        </div>	          	
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have Device protection service?</label>
+          <select required name="DeviceProtection" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>            
+          </select>
+        </div>	       
+        
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have Tech support service?</label>
+          <select required name="TechSupport" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>            
+          </select>
+        </div>	                    
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have TV streaming service?</label>
+          <select required name="StreamingTV" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>            
+          </select>
+        </div>	      
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Does the customer have Movie streaming service?</label>
+          <select required name="StreamingMovies" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>            
+          </select>
+        </div>	  
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">What is the customer's contract term?</label>
+          <select required name="Contract" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Month-to-month">Month-to-month</option>
+            <option value="One year">One year</option>
+            <option value="Two year">Two year</option>            
+          </select>
+        </div>	  
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Did the customer opt for paperless billing?</label>
+          <select required name="PaperlessBilling" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>	  
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">What is the customer's payment method type?</label>
+          <select required name="PaymentMethod" class="form-control" class="custom-select">
+            <option selected hidden value="">--Please choose an option--</option >
+            <option value="Electronic check">Electronic check</option>
+            <option value="Mailed check">Mailed check</option>
+            <option value="Bank transfer (automatic)">Automatic bank transfer</option>
+            <option value="Credit card (automatic)">Automatic credit card debit</option>
+          </select>
+        </div>	  
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Monthly Charges</label>
+          <input style="width: 50rem;" name="MonthlyCharges" type="number" step="any" class="form-control" id="first"
+            aria-describedby="emailHelp" placeholder="The amount charged to the customer monthly" required>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Total Charges</label>
+          <input style="width: 50rem;" name="TotalCharges" type="number" step="any" class="form-control" id="first"
+            aria-describedby="emailHelp" placeholder="The total amount charged to the customer" required>
+        </div>
+
+
+        <div class="form-group text-center">
+          <button id="sub" class="btn btn-primary" type="submit " >Predict</button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+<footer style="text-align: center">
+  <p>By Rohan Paris :)</p>
+</footer>
+
+</html>

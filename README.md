@@ -6,6 +6,33 @@ To identify customers who are more likely to be churned based on the historical 
 # Medium Blog:
 https://parisrohan.medium.com/customer-churn-analysis-and-prediction-using-python-d14d31716869
 
+# Tech Stack:
+* Front-End: HTML, CSS
+* Back-End: Flask
+* IDE: Jupyter notebook, Sypder
+
+# How to run the app
+1. Create a virtual environment using following command:
+   * **_conda create -n <your environment name> python=3.7_**
+2. Activate the created environment
+   * **_activate <your environment name>_**
+3. Navigate to the directory where you wish to install the packages 
+4. Install the required packages using
+   * **_pip install -r requirements.txt_**
+5. Run the app using
+   * **_python app.py_**
+
+# Screenshots:
+
+**Input:**
+![image](https://user-images.githubusercontent.com/49038495/168410380-687bddc9-ea16-4d7a-abc9-d0850442fa7b.png)
+![image](https://user-images.githubusercontent.com/49038495/168410411-86333f9a-f3c2-4ff1-bd13-4819f9fb338b.png)
+![image](https://user-images.githubusercontent.com/49038495/168410420-aae2d098-4b2d-4ef5-bc08-547f76cfce3c.png)
+
+**Output:**
+![image](https://user-images.githubusercontent.com/49038495/168410438-31115dd2-491c-4824-8858-49a66957f471.png)
+
+
 # Workflow:
 
 ## 1. Data collection:

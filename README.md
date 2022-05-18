@@ -15,9 +15,9 @@ https://parisrohan.medium.com/customer-churn-analysis-and-prediction-using-pytho
 
 ## Method 1:
 1. Create a virtual environment using following command:
-   * **_conda create -n <your environment name> python=3.7_**
+   * **_conda create -n your_environment_name python=3.7_**
 2. Activate the created environment
-   * **_activate <your environment name>_**
+   * **_activate your_environment_name_** 
 3. Navigate to the directory where you wish to install the packages 
 4. Install the required packages using
    * **_pip install -r requirements.txt_**

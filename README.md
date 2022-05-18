@@ -9,9 +9,11 @@ https://parisrohan.medium.com/customer-churn-analysis-and-prediction-using-pytho
 # Tech Stack:
 * Front-End: HTML, CSS
 * Back-End: Flask
-* IDE: Jupyter notebook, Sypder
+* Tools: Docker, Jupyter notebook, Sypder
 
 # How to run the app
+
+## Method 1:
 1. Create a virtual environment using following command:
    * **_conda create -n <your environment name> python=3.7_**
 2. Activate the created environment
@@ -21,6 +23,11 @@ https://parisrohan.medium.com/customer-churn-analysis-and-prediction-using-pytho
    * **_pip install -r requirements.txt_**
 5. Run the app using
    * **_python app.py_**
+  
+## Method 2:
+  If you have Docker installed on you local system then run the following command -
+  * **_docker run -d --name docker_cust_pred -p 5000:5000 rparis97/customer-churn-docker_**
+  * Open http://localhost:5000/ in your browser
 
 # Screenshots:
 
@@ -73,4 +80,8 @@ https://parisrohan.medium.com/how-to-handle-an-imbalanced-dataset-9b9012f07017
 * Model metrics after hyperparameter tuning
 ![image](https://user-images.githubusercontent.com/49038495/168243636-1740c57f-add4-46ef-b522-ae7afe84ae5d.png)
 
-
+## 5. Deployment:
+  * The application is dockerized in image **rparis97/customer-churn-docker**
+  * Please refer to the following blog to better understand Docker
+  
+  https://parisrohan.medium.com/all-you-need-to-know-about-docker-with-some-helpful-commands-100337ebfa3
